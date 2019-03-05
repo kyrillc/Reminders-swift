@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationSelectionView" customModule="Reminders" customModuleProvider="target">
+            <connections>
+                <outlet property="circleView" destination="uXU-rD-UXJ" id="ViZ-nT-qTb"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="o3Q-IF-MRi"/>
+                <outlet property="mapView" destination="wGO-W8-Xcg" id="len-8q-Z2U"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="338" height="461"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGO-W8-Xcg">
+                    <rect key="frame" x="0.0" y="0.0" width="338" height="461"/>
+                </mapView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXU-rD-UXJ" customClass="CircleView" customModule="Reminders" customModuleProvider="target">
+                    <rect key="frame" x="84.5" y="146" width="169" height="169"/>
+                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="uXU-rD-UXJ" secondAttribute="height" multiplier="1:1" id="32m-Bd-Xmd"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wGO-W8-Xcg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6Ds-xf-ttm"/>
+                <constraint firstItem="uXU-rD-UXJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="trailing" multiplier="0.25" id="Brf-zo-RIj"/>
+                <constraint firstItem="uXU-rD-UXJ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" multiplier="0.75" id="GqS-kw-uYq"/>
+                <constraint firstItem="wGO-W8-Xcg" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ahI-oB-fQe"/>
+                <constraint firstItem="uXU-rD-UXJ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="iSa-nz-Ayp"/>
+                <constraint firstItem="wGO-W8-Xcg" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="njL-LD-yDW"/>
+                <constraint firstItem="uXU-rD-UXJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rbf-uq-nWS"/>
+                <constraint firstItem="wGO-W8-Xcg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="urz-Zk-KZQ"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-107.2" y="344.97751124437787"/>
+        </view>
+    </objects>
+</document>
