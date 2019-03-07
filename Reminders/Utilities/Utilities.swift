@@ -35,14 +35,6 @@ extension MKCoordinateRegion{
         // West-East distance:
         let longitudeDistance = loc3.distance(from: loc4) as Double
         
-        print("North center:\(loc1.coordinate.latitude) ; \(loc1.coordinate.longitude)")
-        print("South center:\(loc2.coordinate.latitude) ; \(loc2.coordinate.longitude)")
-        print("metersInLatitude:\(latitudeDistance)")
-        
-        print("West center:\(loc3.coordinate.latitude) ; \(loc3.coordinate.longitude)")
-        print("East center:\(loc4.coordinate.latitude) ; \(loc4.coordinate.longitude)")
-        print("metersInLongitude:\(longitudeDistance)")
-        
         return (latitudeDistance: latitudeDistance, longitudeDistance: longitudeDistance)
     }
 }

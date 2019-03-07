@@ -37,7 +37,6 @@ final class LocationManager : NSObject, CLLocationManagerDelegate {
                 locationManager.requestWhenInUseAuthorization()
             }
             locationManager.startUpdatingLocation()
-            print("LocationManager - Did start updating location")
         }
     }
     
@@ -45,12 +44,10 @@ final class LocationManager : NSObject, CLLocationManagerDelegate {
         if (isUpdatingLocation){
             locationManager.stopUpdatingLocation()
             isUpdatingLocation = false;
-            print("LocationManager - Did stop updating location")
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("LocationManager - Did update locations:")
         if let userLoc = locations.last {
             delegate?.didUpdateLocation(location: userLoc)
         }

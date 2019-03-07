@@ -88,12 +88,12 @@ class LocationEditionViewController: UIViewController, UITextFieldDelegate, Loca
         location?.longitude = mapSelection.longitude
         location?.radius = mapSelection.radius
         
-        saveData(onContext:self.context)
+        DataHandler.saveData(onContext:self.context)
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelAct(_ sender: Any) {
-        discardChanges(onContext: self.context)
+        DataHandler.discardChanges(onContext: self.context)
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
 }

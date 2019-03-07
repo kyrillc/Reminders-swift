@@ -137,7 +137,7 @@ class LocationsTableViewController: UITableViewController, NSFetchedResultsContr
     func editLocationAtIndexPath(action :UITableViewRowAction, indexPath :IndexPath){
         let location = self.fetchedResultsController.object(at: fetchedResultControllerIndexPathFromTableViewIndexPath(indexPath)) as! Location
         if (action.style == .destructive){
-            deleteObject(location, onContext: self.context, andCommit: true)
+            DataHandler.deleteObject(location, onContext: self.context, andCommit: true)
         }
         else {
             self.presentLocationEditionView(with: location)

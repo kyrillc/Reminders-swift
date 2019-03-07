@@ -36,6 +36,9 @@
 		D663F385222D77E500FF43FB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D663F384222D77E500FF43FB /* SettingsViewController.swift */; };
 		D663F386222D77E500FF43FB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D663F384222D77E500FF43FB /* SettingsViewController.swift */; };
 		D663F387222D77E500FF43FB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D663F384222D77E500FF43FB /* SettingsViewController.swift */; };
+		D663F38D222EC2F000FF43FB /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D663F38C222EC2F000FF43FB /* NotificationHandler.swift */; };
+		D663F38E222EC2F000FF43FB /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D663F38C222EC2F000FF43FB /* NotificationHandler.swift */; };
+		D663F38F222EC2F000FF43FB /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D663F38C222EC2F000FF43FB /* NotificationHandler.swift */; };
 		D670679E2203291C009EC030 /* Reminders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6AECC7E21FF35F6001E36BD /* Reminders.xcdatamodeld */; };
 		D670679F2203291C009EC030 /* Reminders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6AECC7E21FF35F6001E36BD /* Reminders.xcdatamodeld */; };
 		D681B0CA2217001A00FDEB7C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D681B0C92217001A00FDEB7C /* LocationManager.swift */; };
@@ -100,6 +103,7 @@
 		D663F37C222D38F300FF43FB /* DateUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilities.swift; sourceTree = "<group>"; };
 		D663F380222D3D7200FF43FB /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = Reminders/Views/CircleView.swift; sourceTree = SOURCE_ROOT; };
 		D663F384222D77E500FF43FB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D663F38C222EC2F000FF43FB /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		D681B0C92217001A00FDEB7C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D6AECC7421FF35F6001E36BD /* Reminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6AECC7721FF35F6001E36BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 				D6AECCB422008068001E36BD /* Utilities.swift */,
 				D681B0C92217001A00FDEB7C /* LocationManager.swift */,
 				D663F37C222D38F300FF43FB /* DateUtilities.swift */,
+				D663F38C222EC2F000FF43FB /* NotificationHandler.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D617C83E220C7F8E009FE4CB /* LocationsTableViewController.swift in Sources */,
+				D663F38D222EC2F000FF43FB /* NotificationHandler.swift in Sources */,
 				D6AECC7A21FF35F6001E36BD /* RemindersTableViewController.swift in Sources */,
 				D6AECCB121FF8485001E36BD /* ReminderEditionViewController.swift in Sources */,
 				D663F37D222D38F300FF43FB /* DateUtilities.swift in Sources */,
@@ -428,6 +434,7 @@
 				D6DB847D220479A30046EE71 /* Location+CoreDataClass.swift in Sources */,
 				D6AECCB622008068001E36BD /* Utilities.swift in Sources */,
 				D64EF634220B3C9100125321 /* DataHandler.swift in Sources */,
+				D663F38E222EC2F000FF43FB /* NotificationHandler.swift in Sources */,
 				D6DB847C220479A30046EE71 /* Reminder+CoreDataProperties.swift in Sources */,
 				D617C838220C5B32009FE4CB /* DateUtilitiesTest.swift in Sources */,
 			);
@@ -454,6 +461,7 @@
 				D6AECCB722008068001E36BD /* Utilities.swift in Sources */,
 				D64EF635220B3C9100125321 /* DataHandler.swift in Sources */,
 				D6DB8481220479A30046EE71 /* Reminder+CoreDataProperties.swift in Sources */,
+				D663F38F222EC2F000FF43FB /* NotificationHandler.swift in Sources */,
 				D663F387222D77E500FF43FB /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

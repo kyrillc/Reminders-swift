@@ -121,7 +121,13 @@ class RemindersTableViewController: UITableViewController, NSFetchedResultsContr
         } else {
             let reminder = self.fetchedResultsController.object(at: fetchedResultControllerIndexPathFromTableViewIndexPath(indexPath)) as! Reminder
             reminder.done = !reminder.done
-            saveData(onContext:self.context)
+            DataHandler.saveData(onContext:self.context)
+            if (reminder.done){
+                NotificationHandler.removeReminderNotification(reminder: reminder)
+            }
+            else {
+                NotificationHandler.addNotificationFromReminder(reminder)
+            }
         }
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -141,7 +147,8 @@ class RemindersTableViewController: UITableViewController, NSFetchedResultsContr
     func editReminderAtIndexPath(action :UITableViewRowAction, indexPath :IndexPath){
         let reminder = self.fetchedResultsController.object(at: fetchedResultControllerIndexPathFromTableViewIndexPath(indexPath)) as! Reminder
         if (action.style == .destructive){
-            deleteObject(reminder, onContext: self.context, andCommit: true)
+            NotificationHandler.removeReminderNotification(reminder: reminder)
+            DataHandler.deleteObject(reminder, onContext: self.context, andCommit: true)
         }
         else {
             self.presentReminderEditionView(with: reminder)

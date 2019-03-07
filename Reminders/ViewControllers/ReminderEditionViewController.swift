@@ -236,13 +236,14 @@ class ReminderEditionViewController: UITableViewController, UITextFieldDelegate,
             self.navigationController?.pushViewController(locationTVC, animated: true)
         }
         else if (cellId == Rows.SaveRow) {
-            saveData(onContext:self.context)
+            DataHandler.saveData(onContext:self.context)
+            NotificationHandler.addNotificationFromReminder(reminder!)
             self.navigationController?.dismiss(animated: true, completion: nil)
         }
     }
     
     @IBAction func cancelAct(_ sender: Any) {
-        discardChanges(onContext: self.context)
+        DataHandler.discardChanges(onContext: self.context)
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
