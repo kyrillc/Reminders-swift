@@ -18,12 +18,11 @@ This app will let you:
 * Most of the UI has been made.
 * Core Data has been implemented.
 * It's possible to add/edit/delete reminder/location entries.
+* It's possible to add scheduled and location-based notifications.
 
 
 ## Next Steps
 
-* Add scheduled notifications.
-* Add location-based notifications.
-* Implement more unit tests.
+* Add OnEntry/OnExit region options.
 * Add Undo/Redo feature?
 * Try out either RxSwift or ReactiveSwift?

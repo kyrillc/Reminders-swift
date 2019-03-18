@@ -10,15 +10,13 @@ import UIKit
 import CoreData
 import MapKit
 
-class LocationEditionViewController: UIViewController, UITextFieldDelegate, LocationManagerDelegate {
+class LocationEditionViewController: DataViewController, UITextFieldDelegate, LocationManagerDelegate {
     
     @IBOutlet weak var locationNameField: UITextField!
     @IBOutlet weak var saveBtn: UIBarButtonItem!
     @IBOutlet weak var locationSelectionView: LocationSelectionView!
     
-    var context: NSManagedObjectContext?
     let locationManager = LocationManager.sharedLocationManager
-
     var location : Location?
     
     func setLocation(location:Location) {
@@ -26,16 +24,15 @@ class LocationEditionViewController: UIViewController, UITextFieldDelegate, Loca
     }
     
     func setupNewLocation(){
-        let entity = NSEntityDescription.entity(forEntityName: "Location", in: self.context!)
-        self.location = NSManagedObject(entity: entity!, insertInto: context) as? Location
+        let entity = NSEntityDescription.entity(forEntityName: "Location", in: self.moc())
+        self.location = Location(entity: entity!, insertInto: self.moc())
         self.location!.id = UUID()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.context = appDelegate.persistentContainer.viewContext
+        
         if (self.location == nil){
             setupNewLocation()
             locationManager.delegate = self
@@ -88,12 +85,12 @@ class LocationEditionViewController: UIViewController, UITextFieldDelegate, Loca
         location?.longitude = mapSelection.longitude
         location?.radius = mapSelection.radius
         
-        DataHandler.saveData(onContext:self.context)
+        DataHandler.saveData(onContext:self.moc())
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelAct(_ sender: Any) {
-        DataHandler.discardChanges(onContext: self.context)
+        DataHandler.discardChanges(onContext: self.moc())
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
 }

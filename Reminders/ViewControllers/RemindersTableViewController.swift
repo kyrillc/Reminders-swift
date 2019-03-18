@@ -9,7 +9,7 @@
 import CoreData
 import UIKit
 
-class RemindersTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class RemindersTableViewController: DataTableViewController, NSFetchedResultsControllerDelegate {
 
     enum Sections: Int {
         case ActionSection = 0
@@ -19,8 +19,6 @@ class RemindersTableViewController: UITableViewController, NSFetchedResultsContr
     let NewReminderRow = "New reminder"
     var actionSectionRows = [String]()
 
-    var context: NSManagedObjectContext!
-
     lazy var fetchedResultsController: NSFetchedResultsController = { () -> NSFetchedResultsController<NSFetchRequestResult> in
         let remindersFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Reminder")
         let primarySortDescriptor = NSSortDescriptor(key: "dueDate", ascending: true)
@@ -29,7 +27,7 @@ class RemindersTableViewController: UITableViewController, NSFetchedResultsContr
 
         let frc = NSFetchedResultsController(
             fetchRequest: remindersFetchRequest,
-            managedObjectContext: self.context,
+            managedObjectContext: self.moc(),
             sectionNameKeyPath: nil,
             cacheName: nil)
 
@@ -37,10 +35,8 @@ class RemindersTableViewController: UITableViewController, NSFetchedResultsContr
 
         return frc
     }()
-
+    
     func fetchData() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.context = appDelegate.persistentContainer.viewContext
         do {
             try self.fetchedResultsController.performFetch()
         } catch {
@@ -121,7 +117,7 @@ class RemindersTableViewController: UITableViewController, NSFetchedResultsContr
         } else {
             let reminder = self.fetchedResultsController.object(at: fetchedResultControllerIndexPathFromTableViewIndexPath(indexPath)) as! Reminder
             reminder.done = !reminder.done
-            DataHandler.saveData(onContext:self.context)
+            DataHandler.saveData(onContext:self.moc())
             if (reminder.done){
                 NotificationHandler.removeReminderNotification(reminder: reminder)
             }
@@ -148,7 +144,7 @@ class RemindersTableViewController: UITableViewController, NSFetchedResultsContr
         let reminder = self.fetchedResultsController.object(at: fetchedResultControllerIndexPathFromTableViewIndexPath(indexPath)) as! Reminder
         if (action.style == .destructive){
             NotificationHandler.removeReminderNotification(reminder: reminder)
-            DataHandler.deleteObject(reminder, onContext: self.context, andCommit: true)
+            DataHandler.deleteObject(reminder, onContext: self.moc(), andCommit: true)
         }
         else {
             self.presentReminderEditionView(with: reminder)

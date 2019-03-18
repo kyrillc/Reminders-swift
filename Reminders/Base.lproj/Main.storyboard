@@ -48,7 +48,7 @@
         <!--Reminders-->
         <scene sceneID="z24-PO-llA">
             <objects>
-                <tableViewController storyboardIdentifier="ReminderTableViewController" id="96t-pi-NHt" customClass="RemindersTableViewController" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="RemindersTableViewController" id="96t-pi-NHt" customClass="RemindersTableViewController" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="hbE-NK-woT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,7 +116,7 @@
         <!--New reminder-->
         <scene sceneID="RAE-qn-EO4">
             <objects>
-                <tableViewController storyboardIdentifier="ReminderEditionViewController" title="New reminder" id="CSl-OR-QVj" customClass="ReminderEditionViewController" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ReminderEditionViewController" title="New reminder" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CSl-OR-QVj" customClass="ReminderEditionViewController" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="lfJ-Fd-AG9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

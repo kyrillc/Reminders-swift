@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ReminderEditionViewController: UITableViewController, UITextFieldDelegate, LocationSelectionDelegate {
+class ReminderEditionViewController: DataTableViewController, UITextFieldDelegate, LocationSelectionDelegate {
     
     enum Rows : String {
         case TitleRow = "Title"
@@ -19,6 +19,16 @@ class ReminderEditionViewController: UITableViewController, UITextFieldDelegate,
         case SaveRow = "Save"
     }
     
+    enum Sections : String {
+        case FormSection = "Form"
+        case SaveSection = "Save"
+    }
+    
+    struct Section {
+        var sectionName:String
+        var sectionRows:[Rows]
+    }
+    
     let FormSection = 0
     let ActionsSection = 1
 
@@ -26,14 +36,14 @@ class ReminderEditionViewController: UITableViewController, UITextFieldDelegate,
     var editionRows = [Rows]()
     let actionRows = [Rows.SaveRow]
     
-    var sections = [(sectionName:String, sectionRows:[Rows])]()
-
-    var context: NSManagedObjectContext?
+    var sections = [Section]()
     
     let defaultDate = nearFutureDate()
     var reminder : Reminder?
     var entryIsValid = false
     
+    // MARK: - Setup
+
     func setReminder(reminder:Reminder) {
         self.reminder = reminder
         entryIsValid = true
@@ -41,32 +51,35 @@ class ReminderEditionViewController: UITableViewController, UITextFieldDelegate,
     }
     
     func setupNewReminder(){
-        let entity = NSEntityDescription.entity(forEntityName: "Reminder", in: self.context!)
-        self.reminder = NSManagedObject(entity: entity!, insertInto: context) as? Reminder
+        let entity = NSEntityDescription.entity(forEntityName: "Reminder", in: self.moc())
+        self.reminder = Reminder(entity: entity!, insertInto: self.moc())
         self.reminder!.id = UUID()
     }
     
+    // MARK: - View lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if (self.reminder == nil){
+            setupNewReminder()
+        }
+        
         editionRows = [Rows.TitleRow, Rows.DateRow]
         if (!isNewReminder && self.reminder?.dueDate != nil){
             editionRows.append(Rows.DatePickerRow)
         }
         editionRows.append(Rows.LocationRow)
-
-        sections = [("Form", editionRows), ("Save", actionRows)]
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.context = appDelegate.persistentContainer.viewContext
-        if (self.reminder == nil){
-            setupNewReminder()
-        }
+        sections = [Section(sectionName: Sections.FormSection.rawValue, sectionRows: editionRows), Section(sectionName: Sections.SaveSection.rawValue, sectionRows: actionRows)]
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupTextField()
     }
+    
+    // MARK: -
     
     func setupTextField(){
         let titleRowIndex = self.sections[FormSection].sectionRows.index(of:Rows.TitleRow)!
@@ -156,8 +169,13 @@ class ReminderEditionViewController: UITableViewController, UITextFieldDelegate,
     }
     
     func reloadDateRow(){
-        let index = self.sections[0].sectionRows.index(of:Rows.DateRow)!
-        self.tableView.reloadRows(at: [IndexPath.init(row:index, section:0)], with: .none)
+        let dateIndex = self.sections[0].sectionRows.index(of:Rows.DateRow)!
+        self.tableView.reloadRows(at: [IndexPath.init(row:dateIndex, section:0)], with: .none)
+    }
+    
+    func reloadLocationRow(){
+        let locationIndex = self.sections[FormSection].sectionRows.index(of:Rows.LocationRow)!
+        self.tableView.reloadRows(at: [IndexPath.init(row:locationIndex, section:FormSection)], with: .fade)
     }
     
     
@@ -207,11 +225,6 @@ class ReminderEditionViewController: UITableViewController, UITextFieldDelegate,
         reloadLocationRow()
     }
     
-    func reloadLocationRow(){
-        let locationIndex = self.sections[FormSection].sectionRows.index(of:Rows.LocationRow)!
-        self.tableView.reloadRows(at: [IndexPath.init(row:locationIndex, section:FormSection)], with: .fade)
-    }
-    
     // MARK: - User Actions
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -236,14 +249,14 @@ class ReminderEditionViewController: UITableViewController, UITextFieldDelegate,
             self.navigationController?.pushViewController(locationTVC, animated: true)
         }
         else if (cellId == Rows.SaveRow) {
-            DataHandler.saveData(onContext:self.context)
+            DataHandler.saveData(onContext:self.moc())
             NotificationHandler.addNotificationFromReminder(reminder!)
             self.navigationController?.dismiss(animated: true, completion: nil)
         }
     }
     
     @IBAction func cancelAct(_ sender: Any) {
-        DataHandler.discardChanges(onContext: self.context)
+        DataHandler.discardChanges(onContext: self.moc())
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     

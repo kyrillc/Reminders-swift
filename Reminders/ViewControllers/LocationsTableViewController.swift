@@ -13,7 +13,7 @@ protocol LocationSelectionDelegate {
     func didSelectLocation(_ location :Location)
 }
 
-class LocationsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class LocationsTableViewController: DataTableViewController, NSFetchedResultsControllerDelegate {
     
     private enum Sections: Int {
         case ActionSection = 0
@@ -21,11 +21,9 @@ class LocationsTableViewController: UITableViewController, NSFetchedResultsContr
     }
     
     private let NewLocationRow = "New location"
-    private var actionSectionRows = [String]()
+    var actionSectionRows = [String]()
     var delegate : LocationSelectionDelegate!
-    
-    private var context: NSManagedObjectContext!
-    
+        
     private lazy var fetchedResultsController: NSFetchedResultsController = { () -> NSFetchedResultsController<NSFetchRequestResult> in
         let locationsFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Location")
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
@@ -33,7 +31,7 @@ class LocationsTableViewController: UITableViewController, NSFetchedResultsContr
         
         let frc = NSFetchedResultsController(
             fetchRequest: locationsFetchRequest,
-            managedObjectContext: self.context,
+            managedObjectContext: self.moc(),
             sectionNameKeyPath: nil,
             cacheName: nil)
         
@@ -43,8 +41,6 @@ class LocationsTableViewController: UITableViewController, NSFetchedResultsContr
     }()
     
     func fetchData() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.context = appDelegate.persistentContainer.viewContext
         do {
             try self.fetchedResultsController.performFetch()
         } catch {
@@ -97,7 +93,7 @@ class LocationsTableViewController: UITableViewController, NSFetchedResultsContr
             let location = self.fetchedResultsController.object(at: fetchedResultControllerIndexPathFromTableViewIndexPath(indexPath)) as! Location
             
             cell.textLabel?.text = location.titleString()
-            cell.detailTextLabel?.text = location.remindersString()
+            cell.detailTextLabel?.text = location.remindersCountString()
             
             return cell
         }
@@ -137,7 +133,7 @@ class LocationsTableViewController: UITableViewController, NSFetchedResultsContr
     func editLocationAtIndexPath(action :UITableViewRowAction, indexPath :IndexPath){
         let location = self.fetchedResultsController.object(at: fetchedResultControllerIndexPathFromTableViewIndexPath(indexPath)) as! Location
         if (action.style == .destructive){
-            DataHandler.deleteObject(location, onContext: self.context, andCommit: true)
+            DataHandler.deleteObject(location, onContext: self.moc(), andCommit: true)
         }
         else {
             self.presentLocationEditionView(with: location)

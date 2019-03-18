@@ -12,8 +12,8 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
     
-    private let SavedLocationsRow = "Saved locations"
-    private var rows = [String]()
+    let SavedLocationsRow = "Saved locations"
+    var rows = [String]()
     
     @IBAction func dismiss(_ sender: Any) {
         self.navigationController?.dismiss(animated: true, completion: nil)

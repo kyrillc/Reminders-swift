@@ -34,10 +34,14 @@ class DataHandler {
     static func allReminders() -> [Reminder] {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
+        return allRemindersOnContext(context)
+    }
+    
+    static func allRemindersOnContext(_ context: NSManagedObjectContext) -> [Reminder] {
         let remindersFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Reminder")
         do {
-            let reminders = try context.fetch(remindersFetchRequest) as! [Reminder]
-            return reminders
+            let reminders = try context.fetch(remindersFetchRequest)// as! [Reminder]
+            return reminders as! [Reminder]
         } catch {
             print("error at context.execute")
             return []

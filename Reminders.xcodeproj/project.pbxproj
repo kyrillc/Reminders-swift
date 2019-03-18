@@ -17,9 +17,6 @@
 		D617C97F22130F6F009FE4CB /* LocationSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D617C97E22130F6F009FE4CB /* LocationSelectionView.xib */; };
 		D617C98022130F6F009FE4CB /* LocationSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D617C97E22130F6F009FE4CB /* LocationSelectionView.xib */; };
 		D617C98122130F6F009FE4CB /* LocationSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D617C97E22130F6F009FE4CB /* LocationSelectionView.xib */; };
-		D617C98722131113009FE4CB /* LocationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D617C98622131113009FE4CB /* LocationSelectionView.swift */; };
-		D617C98822131113009FE4CB /* LocationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D617C98622131113009FE4CB /* LocationSelectionView.swift */; };
-		D617C98922131113009FE4CB /* LocationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D617C98622131113009FE4CB /* LocationSelectionView.swift */; };
 		D63A96BE220478290007F4D7 /* Reminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63A96BA220478290007F4D7 /* Reminder+CoreDataClass.swift */; };
 		D63A96C1220478290007F4D7 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63A96BB220478290007F4D7 /* Reminder+CoreDataProperties.swift */; };
 		D63A96C4220478290007F4D7 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63A96BC220478290007F4D7 /* Location+CoreDataClass.swift */; };
@@ -27,6 +24,8 @@
 		D64EF633220B3C9100125321 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64EF632220B3C9100125321 /* DataHandler.swift */; };
 		D64EF634220B3C9100125321 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64EF632220B3C9100125321 /* DataHandler.swift */; };
 		D64EF635220B3C9100125321 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64EF632220B3C9100125321 /* DataHandler.swift */; };
+		D653D155223178AB002BD244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AECC7B21FF35F6001E36BD /* Main.storyboard */; };
+		D653D15A2232C64C002BD244 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D653D1592232C64C002BD244 /* LocationTests.swift */; };
 		D663F37D222D38F300FF43FB /* DateUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D663F37C222D38F300FF43FB /* DateUtilities.swift */; };
 		D663F37E222D38F300FF43FB /* DateUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D663F37C222D38F300FF43FB /* DateUtilities.swift */; };
 		D663F37F222D38F300FF43FB /* DateUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D663F37C222D38F300FF43FB /* DateUtilities.swift */; };
@@ -41,6 +40,19 @@
 		D663F38F222EC2F000FF43FB /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D663F38C222EC2F000FF43FB /* NotificationHandler.swift */; };
 		D670679E2203291C009EC030 /* Reminders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6AECC7E21FF35F6001E36BD /* Reminders.xcdatamodeld */; };
 		D670679F2203291C009EC030 /* Reminders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6AECC7E21FF35F6001E36BD /* Reminders.xcdatamodeld */; };
+		D67BBFCE2239423800867B5C /* CoreDataTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67BBFCD2239423800867B5C /* CoreDataTestBase.swift */; };
+		D67BBFD222394B7200867B5C /* ReminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67BBFD122394B7200867B5C /* ReminderTests.swift */; };
+		D67BBFD42239506800867B5C /* ReminderEditionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67BBFD32239506800867B5C /* ReminderEditionViewControllerTests.swift */; };
+		D67BBFD622395DFA00867B5C /* RemindersTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67BBFD522395DFA00867B5C /* RemindersTableViewControllerTests.swift */; };
+		D67BBFD8223965CF00867B5C /* MOCHolderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67BBFD7223965CF00867B5C /* MOCHolderProtocol.swift */; };
+		D67BBFD922396AB000867B5C /* MOCHolderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67BBFD7223965CF00867B5C /* MOCHolderProtocol.swift */; };
+		D67BBFDA22396AB000867B5C /* MOCHolderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67BBFD7223965CF00867B5C /* MOCHolderProtocol.swift */; };
+		D67BBFDC223975EC00867B5C /* LocationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67BBFDB223975EC00867B5C /* LocationSelectionView.swift */; };
+		D67BBFDD2239762200867B5C /* LocationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67BBFDB223975EC00867B5C /* LocationSelectionView.swift */; };
+		D67BBFDE2239762300867B5C /* LocationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67BBFDB223975EC00867B5C /* LocationSelectionView.swift */; };
+		D67BBFE0223978B200867B5C /* LocationEditionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67BBFDF223978B200867B5C /* LocationEditionViewControllerTests.swift */; };
+		D67BBFE22239792200867B5C /* LocationsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67BBFE12239792200867B5C /* LocationsTableViewControllerTests.swift */; };
+		D67BBFE322397A8800867B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AECC7B21FF35F6001E36BD /* Main.storyboard */; };
 		D681B0CA2217001A00FDEB7C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D681B0C92217001A00FDEB7C /* LocationManager.swift */; };
 		D681B0CB2217001A00FDEB7C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D681B0C92217001A00FDEB7C /* LocationManager.swift */; };
 		D681B0CC2217001A00FDEB7C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D681B0C92217001A00FDEB7C /* LocationManager.swift */; };
@@ -70,6 +82,7 @@
 		D6DB8486220479A90046EE71 /* ReminderEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AECCB021FF8485001E36BD /* ReminderEditionViewController.swift */; };
 		D6DB8487220479AC0046EE71 /* RemindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AECC7921FF35F6001E36BD /* RemindersTableViewController.swift */; };
 		D6DB8488220479AD0046EE71 /* RemindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AECC7921FF35F6001E36BD /* RemindersTableViewController.swift */; };
+		D6E103F5224001A70028278C /* SettingsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E103F4224001A70028278C /* SettingsViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,16 +107,24 @@
 		D617C83D220C7F8E009FE4CB /* LocationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewController.swift; sourceTree = "<group>"; };
 		D617C842220C88D0009FE4CB /* LocationEditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEditionViewController.swift; sourceTree = "<group>"; };
 		D617C97E22130F6F009FE4CB /* LocationSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LocationSelectionView.xib; path = Reminders/Views/LocationSelectionView.xib; sourceTree = SOURCE_ROOT; };
-		D617C98622131113009FE4CB /* LocationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationSelectionView.swift; path = Reminders/LocationSelectionView.swift; sourceTree = SOURCE_ROOT; };
 		D63A96BA220478290007F4D7 /* Reminder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D63A96BB220478290007F4D7 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D63A96BC220478290007F4D7 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D63A96BD220478290007F4D7 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D64EF632220B3C9100125321 /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		D653D1592232C64C002BD244 /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
 		D663F37C222D38F300FF43FB /* DateUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilities.swift; sourceTree = "<group>"; };
 		D663F380222D3D7200FF43FB /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = Reminders/Views/CircleView.swift; sourceTree = SOURCE_ROOT; };
 		D663F384222D77E500FF43FB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D663F38C222EC2F000FF43FB /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		D67BBFCD2239423800867B5C /* CoreDataTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestBase.swift; sourceTree = "<group>"; };
+		D67BBFD122394B7200867B5C /* ReminderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTests.swift; sourceTree = "<group>"; };
+		D67BBFD32239506800867B5C /* ReminderEditionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderEditionViewControllerTests.swift; sourceTree = "<group>"; };
+		D67BBFD522395DFA00867B5C /* RemindersTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersTableViewControllerTests.swift; sourceTree = "<group>"; };
+		D67BBFD7223965CF00867B5C /* MOCHolderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCHolderProtocol.swift; sourceTree = "<group>"; };
+		D67BBFDB223975EC00867B5C /* LocationSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationSelectionView.swift; path = Reminders/Views/LocationSelectionView.swift; sourceTree = SOURCE_ROOT; };
+		D67BBFDF223978B200867B5C /* LocationEditionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEditionViewControllerTests.swift; sourceTree = "<group>"; };
+		D67BBFE12239792200867B5C /* LocationsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		D681B0C92217001A00FDEB7C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D6AECC7421FF35F6001E36BD /* Reminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6AECC7721FF35F6001E36BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +142,7 @@
 		D6AECC9C21FF35F7001E36BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6AECCB021FF8485001E36BD /* ReminderEditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderEditionViewController.swift; sourceTree = "<group>"; };
 		D6AECCB422008068001E36BD /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		D6E103F4224001A70028278C /* SettingsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,11 +194,32 @@
 			isa = PBXGroup;
 			children = (
 				D617C97E22130F6F009FE4CB /* LocationSelectionView.xib */,
-				D617C98622131113009FE4CB /* LocationSelectionView.swift */,
+				D67BBFDB223975EC00867B5C /* LocationSelectionView.swift */,
 				D663F380222D3D7200FF43FB /* CircleView.swift */,
 			);
-			name = Views;
-			path = ViewControllers/Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D653D1522231763B002BD244 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D67BBFD522395DFA00867B5C /* RemindersTableViewControllerTests.swift */,
+				D67BBFD32239506800867B5C /* ReminderEditionViewControllerTests.swift */,
+				D67BBFE12239792200867B5C /* LocationsTableViewControllerTests.swift */,
+				D67BBFDF223978B200867B5C /* LocationEditionViewControllerTests.swift */,
+				D6E103F4224001A70028278C /* SettingsViewControllerTests.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D653D1582232C634002BD244 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D653D1592232C64C002BD244 /* LocationTests.swift */,
+				D67BBFD122394B7200867B5C /* ReminderTests.swift */,
+				D67BBFCD2239423800867B5C /* CoreDataTestBase.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		D69C120922021AB400DE4FCB /* Utilities */ = {
@@ -186,6 +229,7 @@
 				D681B0C92217001A00FDEB7C /* LocationManager.swift */,
 				D663F37C222D38F300FF43FB /* DateUtilities.swift */,
 				D663F38C222EC2F000FF43FB /* NotificationHandler.swift */,
+				D67BBFD7223965CF00867B5C /* MOCHolderProtocol.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -242,6 +286,8 @@
 		D6AECC8E21FF35F7001E36BD /* RemindersTests */ = {
 			isa = PBXGroup;
 			children = (
+				D653D1582232C634002BD244 /* Data */,
+				D653D1522231763B002BD244 /* ViewControllers */,
 				D617C839220C5C5F009FE4CB /* Utilities */,
 				D6AECC8F21FF35F7001E36BD /* RemindersTests.swift */,
 				D6AECC9121FF35F7001E36BD /* Info.plist */,
@@ -374,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D617C98022130F6F009FE4CB /* LocationSelectionView.xib in Resources */,
+				D653D155223178AB002BD244 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D617C98122130F6F009FE4CB /* LocationSelectionView.xib in Resources */,
+				D67BBFE322397A8800867B5C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,13 +446,14 @@
 				D6AECCB121FF8485001E36BD /* ReminderEditionViewController.swift in Sources */,
 				D663F37D222D38F300FF43FB /* DateUtilities.swift in Sources */,
 				D63A96BE220478290007F4D7 /* Reminder+CoreDataClass.swift in Sources */,
+				D67BBFDC223975EC00867B5C /* LocationSelectionView.swift in Sources */,
 				D64EF633220B3C9100125321 /* DataHandler.swift in Sources */,
-				D617C98722131113009FE4CB /* LocationSelectionView.swift in Sources */,
 				D6AECCB522008068001E36BD /* Utilities.swift in Sources */,
 				D663F381222D3D7200FF43FB /* CircleView.swift in Sources */,
 				D617C843220C88D0009FE4CB /* LocationEditionViewController.swift in Sources */,
 				D6AECC8021FF35F6001E36BD /* Reminders.xcdatamodeld in Sources */,
 				D6AECC7821FF35F6001E36BD /* AppDelegate.swift in Sources */,
+				D67BBFD8223965CF00867B5C /* MOCHolderProtocol.swift in Sources */,
 				D663F385222D77E500FF43FB /* SettingsViewController.swift in Sources */,
 				D681B0CA2217001A00FDEB7C /* LocationManager.swift in Sources */,
 				D63A96C7220478290007F4D7 /* Location+CoreDataProperties.swift in Sources */,
@@ -418,25 +467,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				D663F382222D3D7200FF43FB /* CircleView.swift in Sources */,
-				D617C98822131113009FE4CB /* LocationSelectionView.swift in Sources */,
 				D69C126522031F6A00DE4FCB /* AppDelegate.swift in Sources */,
 				D670679E2203291C009EC030 /* Reminders.xcdatamodeld in Sources */,
 				D6DB8487220479AC0046EE71 /* RemindersTableViewController.swift in Sources */,
+				D67BBFD622395DFA00867B5C /* RemindersTableViewControllerTests.swift in Sources */,
+				D6E103F5224001A70028278C /* SettingsViewControllerTests.swift in Sources */,
 				D663F386222D77E500FF43FB /* SettingsViewController.swift in Sources */,
 				D681B0CB2217001A00FDEB7C /* LocationManager.swift in Sources */,
+				D67BBFCE2239423800867B5C /* CoreDataTestBase.swift in Sources */,
 				D6AECC9021FF35F7001E36BD /* RemindersTests.swift in Sources */,
+				D653D15A2232C64C002BD244 /* LocationTests.swift in Sources */,
+				D67BBFD222394B7200867B5C /* ReminderTests.swift in Sources */,
 				D6DB847E220479A30046EE71 /* Location+CoreDataProperties.swift in Sources */,
 				D617C844220C8BE0009FE4CB /* LocationEditionViewController.swift in Sources */,
 				D617C846220C8BE3009FE4CB /* LocationsTableViewController.swift in Sources */,
+				D67BBFDD2239762200867B5C /* LocationSelectionView.swift in Sources */,
 				D6DB847B220479A30046EE71 /* Reminder+CoreDataClass.swift in Sources */,
+				D67BBFE22239792200867B5C /* LocationsTableViewControllerTests.swift in Sources */,
+				D67BBFD42239506800867B5C /* ReminderEditionViewControllerTests.swift in Sources */,
 				D663F37E222D38F300FF43FB /* DateUtilities.swift in Sources */,
 				D6DB8485220479A90046EE71 /* ReminderEditionViewController.swift in Sources */,
+				D67BBFE0223978B200867B5C /* LocationEditionViewControllerTests.swift in Sources */,
 				D6DB847D220479A30046EE71 /* Location+CoreDataClass.swift in Sources */,
 				D6AECCB622008068001E36BD /* Utilities.swift in Sources */,
 				D64EF634220B3C9100125321 /* DataHandler.swift in Sources */,
 				D663F38E222EC2F000FF43FB /* NotificationHandler.swift in Sources */,
 				D6DB847C220479A30046EE71 /* Reminder+CoreDataProperties.swift in Sources */,
 				D617C838220C5B32009FE4CB /* DateUtilitiesTest.swift in Sources */,
+				D67BBFD922396AB000867B5C /* MOCHolderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,11 +507,12 @@
 				D681B0CC2217001A00FDEB7C /* LocationManager.swift in Sources */,
 				D670679F2203291C009EC030 /* Reminders.xcdatamodeld in Sources */,
 				D6DB8488220479AD0046EE71 /* RemindersTableViewController.swift in Sources */,
+				D67BBFDA22396AB000867B5C /* MOCHolderProtocol.swift in Sources */,
 				D6AECC9B21FF35F7001E36BD /* RemindersUITests.swift in Sources */,
 				D6DB8483220479A30046EE71 /* Location+CoreDataProperties.swift in Sources */,
+				D67BBFDE2239762300867B5C /* LocationSelectionView.swift in Sources */,
 				D6DB8480220479A30046EE71 /* Reminder+CoreDataClass.swift in Sources */,
 				D663F37F222D38F300FF43FB /* DateUtilities.swift in Sources */,
-				D617C98922131113009FE4CB /* LocationSelectionView.swift in Sources */,
 				D617C845220C8BE0009FE4CB /* LocationEditionViewController.swift in Sources */,
 				D663F383222D3D7200FF43FB /* CircleView.swift in Sources */,
 				D6DB8486220479A90046EE71 /* ReminderEditionViewController.swift in Sources */,
